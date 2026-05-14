@@ -506,6 +506,14 @@ img {
   margin: 0;
 }
 
+.job-title {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.12em;
+  text-decoration-color: rgba(37, 111, 143, 0.35);
+  text-underline-offset: 0.22em;
+  font-weight: 650;
+}
+
 .older-news {
   margin-top: 12px;
 }
