@@ -33,8 +33,14 @@ description: "Research and engineering portfolio"
   <div class="section-heading">
     <h2>News</h2>
   </div>
+  {% assign sorted_news = site.data.news | sort: "sort_date" | reverse %}
+  {% assign now_ts = site.time | date: "%s" | plus: 0 %}
+  {% assign recent_cutoff_ts = now_ts | minus: 63072000 %}
+  {% assign older_count = 0 %}
   <ol class="news-list">
-    {% for item in site.data.news %}
+    {% for item in sorted_news %}
+      {% assign item_ts = item.sort_date | date: "%s" | plus: 0 %}
+      {% if item_ts >= recent_cutoff_ts %}
       <li>
         <time>{{ item.date }}</time>
         <div>
@@ -43,8 +49,31 @@ description: "Research and engineering portfolio"
         </div>
         <span>{{ item.category }}</span>
       </li>
+      {% else %}
+        {% assign older_count = older_count | plus: 1 %}
+      {% endif %}
     {% endfor %}
   </ol>
+  {% if older_count > 0 %}
+    <button class="toggle-button" type="button" data-toggle-target="older-news" aria-expanded="false">
+      Show older updates
+    </button>
+    <ol class="news-list older-news" id="older-news" hidden>
+      {% for item in sorted_news %}
+        {% assign item_ts = item.sort_date | date: "%s" | plus: 0 %}
+        {% if item_ts < recent_cutoff_ts %}
+          <li>
+            <time>{{ item.date }}</time>
+            <div>
+              <p>{{ item.title_en }}</p>
+              <p class="secondary">{{ item.title_ko }}</p>
+            </div>
+            <span>{{ item.category }}</span>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  {% endif %}
 </section>
 
 <section class="section shell">
@@ -57,32 +86,13 @@ description: "Research and engineering portfolio"
         <h3>{{ item.company_en }}</h3>
         <p class="secondary">{{ item.company_ko }}</p>
         <p class="meta">{{ item.role_en }} · {{ item.role_ko }}</p>
-        <p class="meta">{{ item.period }} · {{ item.location_en }} / {{ item.location_ko }}</p>
+        <p class="meta">{{ item.period }}</p>
         <ul>
           {% for bullet in item.bullets_en %}
             <li>{{ bullet }}</li>
           {% endfor %}
           {% for bullet in item.bullets_ko %}
             <li class="secondary">{{ bullet }}</li>
-          {% endfor %}
-        </ul>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="section shell">
-  <div class="section-heading">
-    <h2>Skills</h2>
-  </div>
-  <div class="skill-grid">
-    {% for group in site.data.skills %}
-      <article class="skill-group">
-        <h3>{{ group.category_en }}</h3>
-        <p class="secondary">{{ group.category_ko }}</p>
-        <ul class="tags">
-          {% for item in group.items %}
-            <li>{{ item }}</li>
           {% endfor %}
         </ul>
       </article>
@@ -123,7 +133,7 @@ description: "Research and engineering portfolio"
   </div>
   <div>
     <div class="section-heading">
-      <h2>Honors & Awards</h2>
+      <h2>Awards</h2>
     </div>
     <div class="compact-list">
       {% for item in site.data.awards %}

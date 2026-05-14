@@ -1,10 +1,19 @@
+- company_en: "SpearAX"
+  company_ko: "스피어에이엑스"
+  role_en: "AI Video Information Security Solution Model Developer"
+  role_ko: "AI 영상정보보안 솔루션 모델 개발"
+  period: "2025.05 - Present"
+  bullets_en:
+    - "Developing AI model components for video information security solutions."
+    - "Working on applied AI model development for production-oriented security workflows."
+  bullets_ko:
+    - "AI 영상정보보안 솔루션을 위한 모델 구성 요소를 개발하고 있습니다."
+    - "실무 보안 워크플로에 적용 가능한 AI 모델 개발을 진행하고 있습니다."
 - company_en: "Vision ITS"
   company_ko: "비젼아이티에스"
   role_en: "R&D Engineer"
   role_ko: "연구개발부"
-  period: "2024.12 - Present"
-  location_en: "Seoul, Republic of Korea"
-  location_ko: "대한민국"
+  period: "2024.12 - 2025.05"
   bullets_en:
     - "Developed AI-based smart parking solution engine features and GUI tooling."
     - "Implemented vehicle metadata communication, virtual loop-line counting, and real-time monitoring workflows."
@@ -16,8 +25,6 @@
   role_en: "Data Analysis Team"
   role_ko: "데이터분석팀"
   period: "2021.07 - 2022.03, 2023.07 - 2024.01"
-  location_en: "Republic of Korea"
-  location_ko: "대한민국"
   bullets_en:
     - "Worked on a personal information de-identification project using NER models."
     - "Performed data analysis and visualization using QGIS."
