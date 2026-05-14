@@ -1,21 +1,19 @@
 ---
 layout: default
-title: "About"
-description: "Research and engineering portfolio"
+title: "소개"
+description: "AI 영상정보보안 및 데이터 기반 개발 포트폴리오"
 ---
 
 {% assign profile = site.data.profile %}
 
 <section class="hero shell" id="about">
   <div class="hero-media">
-    <img src="{{ profile.avatar | relative_url }}" alt="{{ profile.name_en }}">
+    <img src="{{ profile.avatar | relative_url }}" alt="{{ profile.name_ko }}">
   </div>
   <div class="hero-copy">
-    <h1>{{ profile.name_en }}</h1>
-    <p class="name-ko">{{ profile.name_ko }}</p>
-    <p class="role">{{ profile.role_en }} · {{ profile.role_ko }}</p>
-    <p>{{ profile.summary_en }}</p>
-    <p class="secondary">{{ profile.summary_ko }}</p>
+    <h1>{{ profile.name_ko }}</h1>
+    <p class="role">{{ profile.role_ko }}</p>
+    <p>{{ profile.summary_ko }}</p>
     <ul class="tags" aria-label="Research interests">
       {% for keyword in profile.keywords %}
         <li>{{ keyword }}</li>
@@ -31,7 +29,7 @@ description: "Research and engineering portfolio"
 
 <section class="section shell">
   <div class="section-heading">
-    <h2>News</h2>
+    <h2>주요 소식</h2>
   </div>
   {% assign sorted_news = site.data.news | sort: "sort_date" | reverse %}
   {% assign now_ts = site.time | date: "%s" | plus: 0 %}
@@ -44,10 +42,9 @@ description: "Research and engineering portfolio"
       <li>
         <time>{{ item.date }}</time>
         <div>
-          <p>{{ item.title_en }}</p>
-          <p class="secondary">{{ item.title_ko }}</p>
+          <p>{{ item.title_ko }}</p>
         </div>
-        <span>{{ item.category }}</span>
+        <span class="news-category news-category-{{ item.category | downcase }}">{{ item.category }}</span>
       </li>
       {% else %}
         {% assign older_count = older_count | plus: 1 %}
@@ -55,44 +52,40 @@ description: "Research and engineering portfolio"
     {% endfor %}
   </ol>
   {% if older_count > 0 %}
-    <button class="toggle-button" type="button" data-toggle-target="older-news" aria-expanded="false">
-      Show older updates
-    </button>
-    <ol class="news-list older-news" id="older-news" hidden>
-      {% for item in sorted_news %}
-        {% assign item_ts = item.sort_date | date: "%s" | plus: 0 %}
-        {% if item_ts < recent_cutoff_ts %}
-          <li>
-            <time>{{ item.date }}</time>
-            <div>
-              <p>{{ item.title_en }}</p>
-              <p class="secondary">{{ item.title_ko }}</p>
-            </div>
-            <span>{{ item.category }}</span>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ol>
+    <details class="news-more">
+      <summary>More News</summary>
+      <ol class="news-list older-news">
+        {% for item in sorted_news %}
+          {% assign item_ts = item.sort_date | date: "%s" | plus: 0 %}
+          {% if item_ts < recent_cutoff_ts %}
+            <li>
+              <time>{{ item.date }}</time>
+              <div>
+                <p>{{ item.title_ko }}</p>
+              </div>
+              <span class="news-category news-category-{{ item.category | downcase }}">{{ item.category }}</span>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </details>
   {% endif %}
 </section>
 
 <section class="section shell">
   <div class="section-heading">
-    <h2>Work Experience</h2>
+    <h2>경력</h2>
   </div>
   <div class="timeline">
     {% for item in site.data.experience %}
       <article class="timeline-item">
-        <h3>{{ item.company_en }}</h3>
-        <p class="secondary">{{ item.company_ko }}</p>
-        <p class="meta">{{ item.role_en }} · {{ item.role_ko }}</p>
+        <h3>{{ item.company_ko }}</h3>
+        <p class="secondary">{{ item.company_en }}</p>
+        <p class="meta">{{ item.role_ko }}</p>
         <p class="meta">{{ item.period }}</p>
         <ul>
-          {% for bullet in item.bullets_en %}
-            <li>{{ bullet }}</li>
-          {% endfor %}
           {% for bullet in item.bullets_ko %}
-            <li class="secondary">{{ bullet }}</li>
+            <li>{{ bullet }}</li>
           {% endfor %}
         </ul>
       </article>
@@ -102,8 +95,8 @@ description: "Research and engineering portfolio"
 
 <section class="section shell">
   <div class="section-heading">
-    <h2>Selected Projects</h2>
-    <a href="{{ '/projects/' | relative_url }}">All Projects →</a>
+    <h2>주요 프로젝트</h2>
+    <a href="{{ '/projects/' | relative_url }}">전체 프로젝트</a>
   </div>
   <div class="item-list">
     {% for project in site.data.projects %}
@@ -117,31 +110,29 @@ description: "Research and engineering portfolio"
 <section class="section shell two-column">
   <div>
     <div class="section-heading">
-      <h2>Education</h2>
+      <h2>학력</h2>
     </div>
     <div class="compact-list">
       {% for item in site.data.education %}
         <article>
-          <h3>{{ item.school_en }}</h3>
-          <p class="secondary">{{ item.school_ko }}</p>
-          <p>{{ item.degree_en }} · {{ item.degree_ko }}</p>
+          <h3>{{ item.school_ko }}</h3>
+          <p class="secondary">{{ item.school_en }}</p>
+          <p>{{ item.degree_ko }}</p>
           <p class="meta">{{ item.period }}</p>
-          <p class="secondary">{{ item.details_en }} / {{ item.details_ko }}</p>
+          <p class="secondary">{{ item.details_ko }}</p>
         </article>
       {% endfor %}
     </div>
   </div>
   <div>
     <div class="section-heading">
-      <h2>Awards</h2>
+      <h2>수상</h2>
     </div>
     <div class="compact-list">
       {% for item in site.data.awards %}
         <article>
-          <h3>{{ item.title_en }}</h3>
-          <p class="secondary">{{ item.title_ko }}</p>
-          <p>{{ item.description_en }}</p>
-          <p class="secondary">{{ item.description_ko }}</p>
+          <h3>{{ item.title_ko }}</h3>
+          <p>{{ item.description_ko }}</p>
           <p class="meta">{{ item.date }}</p>
         </article>
       {% endfor %}

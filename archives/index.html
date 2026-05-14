@@ -1,13 +1,12 @@
 ---
 layout: default
-title: "Archives"
-description: "Timeline archive"
+title: "기록"
+description: "주요 이력 타임라인"
 ---
 
 <section class="page-header shell">
-  <h1>Archives</h1>
-  <p>A compact timeline of updates, posts, releases, and milestones.</p>
-  <p class="secondary">업데이트, 글, 릴리즈, 주요 기록을 시간순으로 정리합니다.</p>
+  <h1>기록</h1>
+  <p>업데이트, 프로젝트, 경력, 학력, 수상 기록을 시간순으로 정리합니다.</p>
 </section>
 
 <section class="section shell">
@@ -15,9 +14,8 @@ description: "Timeline archive"
     {% for item in site.data.archive %}
       <li>
         <time>{{ item.date }}</time>
-        <a href="{{ item.url | relative_url }}">{{ item.title_en }}</a>
-        <p class="secondary">{{ item.title_ko }}</p>
-        <span>{{ item.category }}</span>
+        <a href="{{ item.url | relative_url }}">{{ item.title_ko }}</a>
+        <span class="news-category news-category-{{ item.category | downcase }}">{{ item.category }}</span>
       </li>
     {% endfor %}
   </ol>
