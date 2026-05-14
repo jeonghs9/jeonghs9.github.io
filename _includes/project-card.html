@@ -1,0 +1,15 @@
+<article class="content-card">
+  <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title_en }}">
+  <div>
+    <h3>{{ include.project.title_en }}</h3>
+    <p class="secondary">{{ include.project.title_ko }}</p>
+    <p class="meta">{{ include.project.organization }}</p>
+    <p>{{ include.project.summary_en }}</p>
+    <p class="secondary">{{ include.project.summary_ko }}</p>
+    <div class="link-row small">
+      {% for link in include.project.links %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</article>

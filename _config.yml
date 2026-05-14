@@ -1,0 +1,21 @@
+title: "Jeonghs9"
+description: "Research and engineering portfolio"
+url: "https://jeonghs9.github.io"
+baseurl: ""
+lang: "en"
+timezone: "Asia/Seoul"
+
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

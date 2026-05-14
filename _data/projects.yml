@@ -1,0 +1,22 @@
+- title_en: "Research Portfolio Platform"
+  title_ko: "연구 포트폴리오 플랫폼"
+  organization: "Personal"
+  summary_en: "A lightweight bilingual Jekyll site for presenting research, engineering projects, and career updates."
+  summary_ko: "연구, 개발 프로젝트, 경력 업데이트를 정리하는 가벼운 Jekyll 기반 영문+국문 사이트입니다."
+  image: "/assets/img/project-placeholder.svg"
+  selected: true
+  links:
+    - label: "Site"
+      url: "https://jeonghs9.github.io"
+    - label: "Code"
+      url: "https://github.com/jeonghs9/jeonghs9.github.io"
+- title_en: "AI Engineering Project Placeholder"
+  title_ko: "AI 엔지니어링 프로젝트 초안"
+  organization: "Personal"
+  summary_en: "A placeholder entry for a future AI system, model, or developer tool."
+  summary_ko: "향후 AI 시스템, 모델, 개발자 도구를 소개하기 위한 초안 항목입니다."
+  image: "/assets/img/project-placeholder.svg"
+  selected: true
+  links:
+    - label: "Details"
+      url: "#"

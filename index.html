@@ -1,0 +1,136 @@
+---
+layout: default
+title: "About"
+description: "Research and engineering portfolio"
+---
+
+{% assign profile = site.data.profile %}
+
+<section class="hero shell" id="about">
+  <div class="hero-media">
+    <img src="{{ profile.avatar | relative_url }}" alt="{{ profile.name_en }}">
+  </div>
+  <div class="hero-copy">
+    <h1>{{ profile.name_en }}</h1>
+    <p class="name-ko">{{ profile.name_ko }}</p>
+    <p class="role">{{ profile.role_en }} · {{ profile.role_ko }}</p>
+    <p>{{ profile.summary_en }}</p>
+    <p class="secondary">{{ profile.summary_ko }}</p>
+    <ul class="tags" aria-label="Research interests">
+      {% for keyword in profile.keywords %}
+        <li>{{ keyword }}</li>
+      {% endfor %}
+    </ul>
+    <div class="link-row">
+      {% for link in profile.links %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section-heading">
+    <h2>News</h2>
+  </div>
+  <ol class="news-list">
+    {% for item in site.data.news %}
+      <li>
+        <time>{{ item.date }}</time>
+        <div>
+          <p>{{ item.title_en }}</p>
+          <p class="secondary">{{ item.title_ko }}</p>
+        </div>
+        <span>{{ item.category }}</span>
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section shell">
+  <div class="section-heading">
+    <h2>Selected Publications</h2>
+    <a href="{{ '/publications/' | relative_url }}">All Publications →</a>
+  </div>
+  <p class="note">* equal contribution · † corresponding author</p>
+  <div class="item-list">
+    {% for publication in site.data.publications %}
+      {% if publication.selected %}
+        {% include publication-card.html publication=publication %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section-heading">
+    <h2>Work Experience</h2>
+  </div>
+  <div class="timeline">
+    {% for item in site.data.experience %}
+      <article class="timeline-item">
+        <h3>{{ item.company_en }}</h3>
+        <p class="secondary">{{ item.company_ko }}</p>
+        <p class="meta">{{ item.role_en }} · {{ item.role_ko }}</p>
+        <p class="meta">{{ item.period }} · {{ item.location_en }} / {{ item.location_ko }}</p>
+        <ul>
+          {% for bullet in item.bullets_en %}
+            <li>{{ bullet }}</li>
+          {% endfor %}
+          {% for bullet in item.bullets_ko %}
+            <li class="secondary">{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section-heading">
+    <h2>Selected Projects</h2>
+    <a href="{{ '/projects/' | relative_url }}">All Projects →</a>
+  </div>
+  <div class="item-list">
+    {% for project in site.data.projects %}
+      {% if project.selected %}
+        {% include project-card.html project=project %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section shell two-column">
+  <div>
+    <div class="section-heading">
+      <h2>Education</h2>
+    </div>
+    <div class="compact-list">
+      {% for item in site.data.education %}
+        <article>
+          <h3>{{ item.school_en }}</h3>
+          <p class="secondary">{{ item.school_ko }}</p>
+          <p>{{ item.degree_en }} · {{ item.degree_ko }}</p>
+          <p class="meta">{{ item.period }}</p>
+          <p class="secondary">{{ item.details_en }} / {{ item.details_ko }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <div class="section-heading">
+      <h2>Honors & Awards</h2>
+    </div>
+    <div class="compact-list">
+      {% for item in site.data.awards %}
+        <article>
+          <h3>{{ item.title_en }}</h3>
+          <p class="secondary">{{ item.title_ko }}</p>
+          <p>{{ item.description_en }}</p>
+          <p class="secondary">{{ item.description_ko }}</p>
+          <p class="meta">{{ item.date }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

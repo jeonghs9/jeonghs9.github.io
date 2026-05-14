@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Publications"
+description: "Publications and research outputs"
+---
+
+<section class="page-header shell">
+  <h1>Publications</h1>
+  <p>Research outputs, papers, reports, and manuscripts.</p>
+  <p class="secondary">논문, 리포트, 원고 등 연구 결과물을 정리합니다.</p>
+</section>
+
+<section class="section shell">
+  <div class="item-list">
+    {% for publication in site.data.publications %}
+      {% include publication-card.html publication=publication %}
+    {% endfor %}
+  </div>
+</section>

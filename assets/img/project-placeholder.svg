@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Project thumbnail placeholder</title>
+  <desc id="desc">Abstract interface for an engineering project.</desc>
+  <rect width="640" height="480" fill="#f5f7f9"/>
+  <rect x="80" y="86" width="480" height="308" rx="18" fill="#ffffff" stroke="#dfe3e8" stroke-width="4"/>
+  <rect x="116" y="126" width="160" height="32" rx="6" fill="#256f8f" opacity=".82"/>
+  <rect x="116" y="190" width="408" height="22" rx="5" fill="#d7e8ee"/>
+  <rect x="116" y="236" width="280" height="22" rx="5" fill="#d7e8ee"/>
+  <rect x="116" y="302" width="96" height="44" rx="8" fill="#164f67" opacity=".9"/>
+  <rect x="236" y="302" width="96" height="44" rx="8" fill="#256f8f" opacity=".72"/>
+</svg>

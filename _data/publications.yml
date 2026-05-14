@@ -1,0 +1,22 @@
+- title_en: "Placeholder Research Paper on Multimodal Systems"
+  title_ko: "멀티모달 시스템 연구 논문 초안"
+  authors: "Jeong H. S., Collaborator A, Collaborator B"
+  venue: "Under Preparation"
+  year: "2026"
+  image: "/assets/img/publication-placeholder.svg"
+  selected: true
+  links:
+    - label: "Paper"
+      url: "#"
+    - label: "Code"
+      url: "#"
+- title_en: "Applied AI System Design for Research Prototypes"
+  title_ko: "연구 프로토타입을 위한 응용 AI 시스템 설계"
+  authors: "Jeong H. S."
+  venue: "Technical Report"
+  year: "2025"
+  image: "/assets/img/publication-placeholder.svg"
+  selected: true
+  links:
+    - label: "Report"
+      url: "#"

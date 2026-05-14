@@ -1,0 +1,13 @@
+- company_en: "Organization Name"
+  company_ko: "기관명"
+  role_en: "Research / Engineering Role"
+  role_ko: "연구 / 개발 역할"
+  period: "2026 - Present"
+  location_en: "Seoul, Republic of Korea"
+  location_ko: "서울, 대한민국"
+  bullets_en:
+    - "Designed and built research-oriented software systems."
+    - "Collaborated across research, engineering, and product contexts."
+  bullets_ko:
+    - "연구 지향 소프트웨어 시스템을 설계하고 구현했습니다."
+    - "연구, 개발, 제품 맥락을 연결해 협업했습니다."
