@@ -49,21 +49,6 @@ description: "Research and engineering portfolio"
 
 <section class="section shell">
   <div class="section-heading">
-    <h2>Selected Publications</h2>
-    <a href="{{ '/publications/' | relative_url }}">All Publications →</a>
-  </div>
-  <p class="note">* equal contribution · † corresponding author</p>
-  <div class="item-list">
-    {% for publication in site.data.publications %}
-      {% if publication.selected %}
-        {% include publication-card.html publication=publication %}
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
-
-<section class="section shell">
-  <div class="section-heading">
     <h2>Work Experience</h2>
   </div>
   <div class="timeline">
@@ -79,6 +64,25 @@ description: "Research and engineering portfolio"
           {% endfor %}
           {% for bullet in item.bullets_ko %}
             <li class="secondary">{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section-heading">
+    <h2>Skills</h2>
+  </div>
+  <div class="skill-grid">
+    {% for group in site.data.skills %}
+      <article class="skill-group">
+        <h3>{{ group.category_en }}</h3>
+        <p class="secondary">{{ group.category_ko }}</p>
+        <ul class="tags">
+          {% for item in group.items %}
+            <li>{{ item }}</li>
           {% endfor %}
         </ul>
       </article>

@@ -279,6 +279,26 @@ img {
   gap: 48px;
 }
 
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.skill-group {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-group h3 {
+  margin: 0 0 4px;
+  font-size: 1.02rem;
+}
+
+.skill-group .tags {
+  margin-bottom: 0;
+}
+
 .compact-list {
   display: grid;
   gap: 18px;
@@ -315,6 +335,7 @@ img {
   .content-card,
   .news-list li,
   .archive-list li,
+  .skill-grid,
   .two-column {
     grid-template-columns: 1fr;
   }
